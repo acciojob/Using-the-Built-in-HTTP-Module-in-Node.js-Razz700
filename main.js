@@ -5,12 +5,13 @@ if(fs.readFileSync("./output.txt")){
 fs.readFile('./output.txt','utf8',(err,data)=>{
     console.log(data);
     res.write('Hello, World!');
+    res.end();
 })
 }else{
     console.log('File cannot be read!')
 }
 });
-server.listen(3000,()=>{
+server.listen(3000,'localhost',()=>{
     console.log('Listenig to port 3000');
 })
 // TODO: Create an HTTP server
