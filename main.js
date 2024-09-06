@@ -3,6 +3,11 @@ const fs=require('fs');
 const server=http.createServer((req,res)=>{
 if(fs.existsSync("./output.txt")){
 fs.readFile('./output.txt','utf8',(err,data)=>{
+    if(err){
+        console.error('Error in reading file',err);
+        res.end();
+        return;
+    }
     console.log(data);
     res.write('Hello, World!');
     res.end();
