@@ -10,7 +10,7 @@ fs.readFile('./output.txt','utf8',(err,data)=>{
     console.log('File cannot be read!')
 }
 });
-server.listen(3000,'localhost',()=>{
+server.listen(3000,()=>{
     console.log('Listenig to port 3000');
 })
 // TODO: Create an HTTP server
