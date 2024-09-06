@@ -13,7 +13,7 @@ fs.readFile('./output.txt','utf8',(err,data)=>{
     res.end();
 })
 }else{
-    console.log('File cannot be read!')
+    console.log('File cannot be read!');
 }
 });
 server.listen(3000,'localhost',()=>{
