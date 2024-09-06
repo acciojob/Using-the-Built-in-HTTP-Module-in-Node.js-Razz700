@@ -1,7 +1,7 @@
 const http = require('http');
 const fs=require('fs');
 const server=http.createServer((req,res)=>{
-if(fs.readFileSync("./output.txt")){
+if(fs.existsSync("./output.txt")){
 fs.readFile('./output.txt','utf8',(err,data)=>{
     console.log(data);
     res.write('Hello, World!');
