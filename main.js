@@ -1,8 +1,9 @@
 const http = require('http');
 const fs=require('fs');
+const filePath = process.argv[2];
 const server=http.createServer((req,res)=>{
-if(fs.existsSync("./output.txt")){
-fs.readFile('./output.txt','utf8',(err,data)=>{
+if(fs.existsSync(filePath)){
+fs.readFile(filePath,'utf8',(err,data)=>{
     if(err){
         console.log('Error in reading file',err);
         res.end('Error in reading file',err);

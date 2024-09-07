@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "test": "jest 2> output.txt --forceExit  --detectOpenHandles",
-    "start": "nodemon main.js &"
+    "start": "node main.js &"
   },
   "repository": {
     "type": "git",
@@ -36,7 +36,6 @@
     "express-session": "^1.17.3",
     "fs": "^0.0.1-security",
     "mongoose": "^7.5.3",
-    "nodemon": "^3.1.4",
     "passport": "^0.6.0",
     "passport-facebook": "^3.0.0",
     "passport-local": "^1.0.0",
