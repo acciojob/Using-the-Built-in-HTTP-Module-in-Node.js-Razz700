@@ -29,9 +29,8 @@ const fs = require('fs');
 const server = http.createServer((req, res) => {
     // Get the file path from the command line arguments
     const filePath = process.argv[2];
-    if(fs.existsSync(filePath)){
     res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end("Hello, World!\n");}
+    res.end("Hello, World!\n");
 });
 
 
