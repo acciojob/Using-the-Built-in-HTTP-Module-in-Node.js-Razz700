@@ -1,25 +1,27 @@
-const http = require('http');
+//const http = require('http');
 const fs=require('fs');
 const filePath = process.argv[2];
-const server=http.createServer((req,res)=>{
+// const server=http.createServer((req,res)=>{
 if(fs.existsSync(filePath)){
-fs.readFile(filePath,'utf8',(err,data)=>{
-    if(err){
-        console.log('Error in reading file',err);
-        res.end('Error in reading file',err);
-        return;
-    }
-    console.log(data);
-    res.end(data);
-})
+    console.log('Hello, World!');
+    
+// fs.readFile(filePath,'utf8',(err,data)=>{
+//     if(err){
+//         console.log('Error in reading file',err);
+//         res.end('Error in reading file',err);
+//         return;
+//     }
+//     console.log(data);
+//     res.end(data);
+// })
 }else{
     console.log('File does not exist!');
-    res.end('File does not exist!')
+   // res.end('File does not exist!')
 }
-});
-server.listen(3000,'localhost',()=>{
-    console.log('Listenig to port 3000');
-});
+// });
+// server.listen(3000,'localhost',()=>{
+//     console.log('Listenig to port 3000');
+// });
 
 
 // const http = require('http');
