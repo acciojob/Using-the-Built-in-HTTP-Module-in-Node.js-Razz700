@@ -1,28 +1,44 @@
-const http = require('http');
-const fs=require('fs');
-const filePath = process.argv[2];
-const server=http.createServer((req,res)=>{
-if(fs.existsSync(filePath)){
-    console.log('Hello, World!');
+// const http = require('http');
+// const fs=require('fs');
+// const filePath = process.argv[2];
+// const server=http.createServer((req,res)=>{
+// if(fs.existsSync(filePath)){
+//     console.log('Hello, World!');
     
-fs.readFile(filePath,'utf8',(err,data)=>{
-    if(err){
-        console.log('Error in reading file',err);
-        res.end('Error in reading file',err);
-        return;
-    }
-    res.end(data);
-})
-}else{
-    console.log('File does not exist!');
-    res.end('File does not exist!')
-}
-});
-server.listen(3000,'localhost',()=>{
-    console.log('Listenig to port 3000');
+// fs.readFile(filePath,'utf8',(err,data)=>{
+//     if(err){
+//         console.log('Error in reading file',err);
+//         res.end('Error in reading file',err);
+//         return;
+//     }
+//     res.end(data);
+// })
+// }else{
+//     console.log('File does not exist!');
+//     res.end('File does not exist!')
+// }
+// });
+// server.listen(3000,'localhost',()=>{
+//     console.log('Listenig to port 3000');
+// });
+//////////////////////////////////////////////////
+const http = require('http');
+const fs = require('fs');
+
+// Create an HTTP server
+const server = http.createServer((req, res) => {
+    // Get the file path from the command line arguments
+    const filePath = process.argv[2];
+    if(fs.existsSync(filePath)){
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end("Hello, World!\n");}
 });
 
 
+server.listen(3000, () => {
+    console.log(`Server is listening to port 3000`);
+});
+////////////////////////////////////////////////////
 // const http = require('http');
 // const fs = require('fs');
 // const path = require('path');
